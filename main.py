@@ -15,7 +15,7 @@ nltk.download('punkt_tab', quiet=True)
 
 sia = SentimentIntensityAnalyzer()
 
-def get_top_negative_sentences(data, num_sentences=200, threshold=-0.5):
+def get_top_negative_sentences(data, num_sentences=400, threshold=-0.5):
     sentences = nltk.sent_tokenize(data)
     scored_sentences = [(sentence, sia.polarity_scores(sentence)) for sentence in sentences]
     negative_sentences = [
